@@ -15,34 +15,37 @@ def ping(host,host1,host2):
     command2 = ['ping', param, '2', host1]
     command3 = ['ping', param, '3', host2]
 
-  #call(...): Runs a command, waits for it to complete, then returns the return code.
-    if subprocess.call(command) == 0:   #if the command provided above is equal to 0, show the msg succeccfully pinged, else ping failed)
-
-        msg = 'Ping  ' + host +  ' successfully :)'
+ #call(...): Runs a command, waits for it to complete, then returns the return code.
+ #if the command provided above is equal to 0, show the msg succeccfully pinged, else ping failed)
+    if subprocess.call(command) == 0:   
+        msg = 'Ping  ' + host +  ' successfully :)'      #the msg will show "ping" 172.24.0.2 "successfully"
       
     else:
-        msg= 'Ping  ' + host +  ' failed :('
+        msg= 'Ping  ' + host +  ' failed :('             #the msg will show "ping" 172.24.0.2 "failed"
     
-
+ #call(...): Runs a command, waits for it to complete, then returns the return code.
+#if the command1 provided above is equal to 0, show the msg succeccfully pinged, else ping failed)
 
     if subprocess.call(command2) == 0:
-        msg = 'Ping  ' + host1 +  ' successfully :)'
+        msg = 'Ping  ' + host1 +  ' successfully :)'    #the msg will show "ping" 172.25.0.2 "successfully"
     else:
-        msg= 'Ping  ' + host1 +  ' failed :('
+        msg= 'Ping  ' + host1 +  ' failed :('           #the msg will show "ping" 172.25.0.2 "failed"
 
+ #call(...): Runs a command, waits for it to complete, then returns the return code.
+#if the command2 provided above is equal to 0, show the msg succeccfully pinged, else ping failed)
 
     if subprocess.call(command3) == 0:
-        msg = 'Ping  ' + host2 +  ' successfully :)'
+        msg = 'Ping  ' + host2 +  ' successfully :)'         #the msg will show "ping" 172.25.0.3 "successfully"
     else:
-        msg= 'Ping  ' + host2 +  ' failed :('
+        msg= 'Ping  ' + host2 +  ' failed :('               #the msg will show "ping" 172.25.0.3 "failed"
 
 
 
-    return msg
-host = '172.24.0.3'
-host1 = '172.25.0.2'
-host2 = '172.25.0.3'
-print('\n',ping(host,host1,host2),'\n') 
+    return msg  #returns the message
+host = '172.24.0.3'   #editing the host with containers ips
+host1 = '172.25.0.2'  #editing the host with containers ips
+host2 = '172.25.0.3'  #editing the host with containers ips
+print('\n',ping(host,host1,host2),'\n')     #print the ping command of each host
 
 
 
